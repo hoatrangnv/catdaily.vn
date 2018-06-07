@@ -45,23 +45,31 @@ $this->title = $seoInfo->page_title ? $seoInfo->page_title : Yii::$app->name;
         font-size: 1.5em;
         font-weight: bold;
         margin-top: 1rem;
-        margin-bottom: 1.5rem;
+        margin-bottom: 1rem;
         font-style: italic;
     }
     #header a + * {
         margin-left: 1.5rem;
     }
+    @media screen and (max-width: 640px) {
+        #header {
+            padding-left: calc(35px + 1.5rem);
+        }
+    }
 </style>
+    <div id="menu-mobile-backdrop"
+         onclick="document.querySelector('html').classList.remove('menu-active')">
+    </div>
+
     <div id="header">
         <div class="container">
             <a>CATDaily</a>
+            <br class="sm-only">
             <span>Culture - Art - Technology</span>
         </div>
     </div>
 
-    <div id="top-nav">
-        <?= $this->render('//layouts/navBar', ['menu' => $this->context->menu]) ?>
-    </div>
+    <?= $this->render('//layouts/topNav', ['menu' => $this->context->menu]) ?>
 
     <?= $this->render('//layouts/searchToolbar') ?>
 
@@ -80,7 +88,7 @@ $this->title = $seoInfo->page_title ? $seoInfo->page_title : Yii::$app->name;
     if ($headerBanner && $headerBanner->image) {
         ?>
         <?= $headerBanner->image->img(null, [
-            'style' => 'display:block;width:100%;margin-top:1.5rem;margin-bottom:1.5rem'
+            'style' => 'display:block;width:100%;margin-top:1rem;margin-bottom:1.5rem'
         ]) ?>
         <?php
     }
@@ -88,7 +96,7 @@ $this->title = $seoInfo->page_title ? $seoInfo->page_title : Yii::$app->name;
     </div>
 
     <div class="container clr" id="main-content">
-        <?= $content ?>
+        <?php //echo $content ?>
     </div>
 
     <div id="bottom-nav">

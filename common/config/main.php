@@ -7,11 +7,11 @@ return [
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm' => '@vendor/npm-asset',
-        '@frontendUrl' => 'http://hotteen.vn',
-        '@frontendHost' => 'http://hotteen.vn',
-        '@backendUrl' => 'http://hotteen.vn/backend',
-        '@backendHost' => 'http://hotteen.vn',
-        '@imagesUrl' => 'http://hotteen.vn/images',
+        '@frontendUrl' => 'http://catdaily.vn',
+        '@frontendHost' => 'http://catdaily.vn',
+        '@backendUrl' => 'http://cp.catdaily.vn',
+        '@backendHost' => 'http://cp.catdaily.vn',
+        '@imagesUrl' => 'http://catdaily.vn/images',
     ],
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
     'components' => [
