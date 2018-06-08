@@ -236,14 +236,14 @@ i.icon {
         top: 0;
         bottom: 0;
         left: 0;
-        width: 85vw;
+        width: 80vw;
         overflow: auto;
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-        max-width: 320px;
+        max-width: 280px;
     }
     #top-nav ul > li.menu-header {
         color: #fff;
-        padding: 1rem 0;
+        padding: 0;
         background-color: rgba(0, 0, 0, 0.5);
     }
     #top-nav ul > li.menu-header .close-button {
