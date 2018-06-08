@@ -96,7 +96,7 @@ $this->title = $seoInfo->page_title ? $seoInfo->page_title : Yii::$app->name;
     </div>
 
     <div class="container clr" id="main-content">
-        <?php echo $content ?>
+        <?php //echo $content ?>
     </div>
 
     <div id="bottom-nav">
