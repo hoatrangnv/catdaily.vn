@@ -206,6 +206,13 @@ i.icon {
     }
 }
 
+/**
+ * TOP BANNER
+ */
+#top-banner {
+    margin-top: 1rem;
+}
+
 @media screen and (max-width: 640px) {
     #top-nav {
         position: absolute;
@@ -474,7 +481,7 @@ i.icon {
 
 /** MAIN CONTENT */
 #main-content {
-    margin-top: 1rem;
+    margin-top: 1.5rem;
 }
 #main-content > .left {
     width: calc(70% - 0.75rem);
@@ -1062,9 +1069,11 @@ footer .hotline a {
 
 /** SLIDER */
 .slider {
+    overflow: hidden;
+}
+.slider:not(.ratio-fixed) {
     height: 0;
     visibility: hidden;
-    overflow: hidden;
 }
 .slider.initialized {
     height: auto;

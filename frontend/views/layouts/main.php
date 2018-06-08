@@ -87,19 +87,13 @@ $this->title = $seoInfo->page_title ? $seoInfo->page_title : Yii::$app->name;
 
     if (count($headerBanners) > 0) {
         ?>
-        <div class="container clr">
-            <div class="slider"
-                 data-page-size-large="1"
+        <div class="container clr aspect-ratio __16x9" id="top-banner">
+            <div class="slider ratio-fixed"
                  data-slide-time="200"
                  data-display-arrows="true"
                  data-display-arrows-small="false"
                  data-display-navigator="true"
-                 data-item-aspect-ratio="adjust-by-typed-items"
-                 data-display-thumbnails="true"
-                 data-display-thumbnails-small="true"
-                 data-preview-left="0.25"
-                 data-preview-right="0.25"
-                 data-repeat-at-last="true"
+                 data-item-aspect-ratio="1.777777777777778"
             >
                 <?php
                 foreach ($headerBanners as $headerBanner) {
