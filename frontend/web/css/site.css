@@ -953,6 +953,12 @@ footer {
     border-top: 1px solid #ddd;
     background-color: #eee;
 }
+footer ul {
+    list-style: none;
+}
+footer ul li + li {
+    margin-top: 0.5rem;
+}
 footer .com-name {
     text-transform: uppercase;
     color: #ED008E;
