@@ -953,44 +953,14 @@ footer {
     border-top: 1px solid #ddd;
     background-color: #eee;
 }
-footer .ft-col {
-    float: left;
-}
-footer .ft-col:not(:last-child) {
-    padding-right: 1.5rem;
-    border-right: 1px solid #bce;
-    width: 50%;
-}
-footer .ft-col:not(:first-child) {
-    width: calc(50% + 1px);
-    padding-left: calc(1.5rem + 1px);
-    border-left: 1px solid #bce;
-    margin-left: -1px;
-}
-footer .ft-col:nth-child(2n + 1) {
-    text-align: right;
-}
-footer ul {
-    list-style: none;
-}
-footer ul li:not(:first-child) {
-    margin-top: 0.5rem;
-}
-footer a {
-    padding: 0.1em;
-}
-footer a:hover {
-    opacity: 0.8;
-    border-bottom: 1px solid #bce;
-}
 footer .com-name {
+    text-transform: uppercase;
+    color: #ED008E;
     font-weight: bold;
 }
-footer .phone-number a {
-    color: #0a0;
-}
-footer .hotline a {
-    color: #e00;
+footer a:hover {
+    text-decoration: underline;
+    color: #ED008E;
 }
 
 /** IMAGE */
