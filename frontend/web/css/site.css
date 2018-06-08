@@ -160,7 +160,7 @@ i.icon {
         margin-top: 1rem;
         font-weight: bold;
         background-color: #ED008E;
-        background: linear-gradient(to right, #ED008E 45%, #9C2B93);
+        background: linear-gradient(to right, #ED008E, #9C2B93);
     }
     #top-nav .menu > li > a:hover {
         text-decoration: underline;
@@ -508,7 +508,7 @@ i.icon {
     width: 100%;
 }
 .top-stories a:hover .name {
-    color: #00a;
+    color: #ED008E;
 }
 
 .top-stories .hot a .name {
@@ -561,7 +561,6 @@ i.icon {
     margin-top: 1.5rem;
 }
 .stories-card .heading {
-    border-bottom: 1px solid #00a;
     background-color: #f8faff;
 }
 .stories-card .heading .title,
@@ -582,9 +581,10 @@ i.icon {
     padding-left: 1rem;
     overflow: hidden;
     z-index: 1;
+    transition: 150ms;
 }
 .stories-card .heading a.title:hover {
-    color: #ee0;
+    color: #F3A0BA;
 }
 .stories-card .heading .title:before,
 .stories-card .heading .title:after {
@@ -599,10 +599,11 @@ i.icon {
     transform: rotateZ(-30deg);
 }
 .stories-card .heading .title:before {
-    background-color: #00a;
+    background-color: #ED008E;
+    background: linear-gradient(to right, #ED008E 90%, #9C2B93);
 }
 .stories-card .heading .title:after {
-    border-right: 1px solid #00a;
+    border-right: 1px solid #9C2B93;
     background-color: transparent;
     margin-right: -3px;
 }
@@ -626,7 +627,7 @@ i.icon {
     color: #666;
 }
 .stories-card .heading .extra ul li > a:hover {
-    color: #00a;
+    color: #ED008E;
 }
 
 .stories-card .body {
@@ -643,7 +644,7 @@ i.icon {
 }
 
 .stories-card .body a:hover .name {
-    color: #00a;
+    color: #ED008E;
 }
 .stories-card .body .hot a .name {
     font-size: 1.15em;
@@ -695,7 +696,7 @@ i.icon {
     font-weight: bold;
 }
 .thumbnail-story-list .item a:hover .name {
-    color: #00a;
+    color: #ED008E;
 }
 .thumbnail-story-list .item a .info {
     margin-top: 0.3rem;
@@ -717,7 +718,7 @@ i.icon {
 .story .name {
     font-size: 1.7em;
     font-weight: bold;
-    color: #00a;
+    color: #ED008E;
     text-align: justify;
 }
 .story .info * {
@@ -794,7 +795,7 @@ i.icon {
     font-weight: normal;
 }
 .aside-featured-stories ul li a:hover .name {
-    color: #00a;
+    color: #ED008E;
 }
 .aside-featured-stories ul li {
     list-style: none;
@@ -816,7 +817,8 @@ i.icon {
 }
 .aside-featured-stories .title,
 .aside-story-list .title {
-    background-color: #00a;
+    background-color: #ED008E;
+    background: linear-gradient(to right, #ED008E, #9C2B93);
     color: #fff;
     text-transform: uppercase;
     font-weight: bold;
@@ -881,34 +883,21 @@ i.icon {
     margin-left: 0.15em;
 }
 .breadcrumb a:hover {
-    color: #00a;
+    color: #ED008E;
 }
 
 /** SECTION */
 section .heading {
 }
 section .heading .title {
-    font-size: 1.1em;
+    font-size: 1.2em;
     font-weight: bold;
-    color: #00a;
+    color: #ED008E;
     float: left;
-    border-left: 0.3rem solid #00a;
-    padding: 0.3rem 2.2rem 0.3rem 0.6rem;
+    border-left: 0.3rem solid #ED008E;
+    padding-left: 0.6rem;
     overflow: hidden;
-}
-section .heading .title:before {
-    content: "";
-    display: block;
-    position: absolute;
-    transform: rotateZ(45deg);
-    background-color: #f0f2fa;
-    width: 1000px;
-    height: 1000px;
-    top: -500px;
-    bottom: -500px;
-    right: calc(196px + 1.6rem);
-    margin: auto;
-    z-index: 0;
+    text-transform: uppercase;
 }
 section .heading .title span {
     z-index: 1;

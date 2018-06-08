@@ -113,6 +113,7 @@ use yii\helpers\Html;
                         <div class="extra sm-hidden">
                             <ul>
                                 <?php
+                                /*
                                 $i = 0;
                                 foreach ($category->findChildren() as $child) {
                                     $i++;
@@ -129,6 +130,7 @@ use yii\helpers\Html;
                                     </li>
                                     <?php
                                 }
+                                */
                                 ?>
                             </ul>
                         </div>

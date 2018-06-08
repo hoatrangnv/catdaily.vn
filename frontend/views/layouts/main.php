@@ -73,30 +73,57 @@ $this->title = $seoInfo->page_title ? $seoInfo->page_title : Yii::$app->name;
 
     <?= $this->render('//layouts/searchToolbar') ?>
 
-    <div class="container clr">
     <?php
     /**
      * @var $headerBanner Banner
      */
-    $headerBanner = Banner::find()
+    $headerBanners = Banner::find()
         ->where(['active' => 1])
         ->andWhere(['position' => Banner::POSITION_HEADER])
         ->andWhere(['<', 'start_time', date('Y-m-d H:i:s')])
         ->andWhere(['>', 'end_time', date('Y-m-d H:i:s')])
         ->orderBy('sort_order asc')
-        ->one();
-    if ($headerBanner && $headerBanner->image) {
+        ->all();
+
+    if (count($headerBanners) > 0) {
         ?>
-        <?= $headerBanner->image->img(null, [
-            'style' => 'display:block;width:100%;margin-top:1rem;margin-bottom:1.5rem'
-        ]) ?>
+        <div class="container clr">
+            <div class="slider"
+                 data-page-size-large="1"
+                 data-slide-time="200"
+                 data-display-arrows="true"
+                 data-display-arrows-small="false"
+                 data-display-navigator="true"
+                 data-item-aspect-ratio="adjust-by-typed-items"
+                 data-display-thumbnails="true"
+                 data-display-thumbnails-small="true"
+                 data-preview-left="0.25"
+                 data-preview-right="0.25"
+                 data-repeat-at-last="true"
+            >
+                <?php
+                foreach ($headerBanners as $headerBanner) {
+                    if ($headerBanner->image) {
+                        ?>
+                        <div class="item-inner">
+                            <div class="image">
+                                <span>
+                                    <?= $headerBanner->image->img() ?>
+                                </span>
+                            </div>
+                        </div>
+                        <?php
+                    }
+                }
+                ?>
+            </div>
+        </div>
         <?php
     }
     ?>
-    </div>
 
     <div class="container clr" id="main-content">
-        <?php //echo $content ?>
+        <?= $content ?>
     </div>
 
     <div id="bottom-nav">
