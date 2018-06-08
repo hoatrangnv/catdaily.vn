@@ -74,45 +74,48 @@ $this->title = $seoInfo->page_title ? $seoInfo->page_title : Yii::$app->name;
     <?= $this->render('//layouts/searchToolbar') ?>
 
     <?php
-    /**
-     * @var $headerBanner Banner
-     */
-    $headerBanners = Banner::find()
-        ->where(['active' => 1])
-        ->andWhere(['position' => Banner::POSITION_HEADER])
-        ->andWhere(['<', 'start_time', date('Y-m-d H:i:s')])
-        ->andWhere(['>', 'end_time', date('Y-m-d H:i:s')])
-        ->orderBy('sort_order asc')
-        ->all();
+    if (in_array(Yii::$app->requestedRoute, ['site/index'])) {
+        /**
+         * @var $headerBanner Banner
+         */
+        $headerBanners = Banner::find()
+            ->where(['active' => 1])
+            ->andWhere(['position' => Banner::POSITION_HEADER])
+            ->andWhere(['<', 'start_time', date('Y-m-d H:i:s')])
+            ->andWhere(['>', 'end_time', date('Y-m-d H:i:s')])
+            ->orderBy('sort_order asc')
+            ->all();
 
-    if (count($headerBanners) > 0) {
-        ?>
-        <div class="container clr aspect-ratio __16x9" id="top-banner">
-            <div class="slider ratio-fixed"
-                 data-slide-time="200"
-                 data-display-arrows="true"
-                 data-display-arrows-small="false"
-                 data-display-navigator="true"
-                 data-item-aspect-ratio="1.777777777777778"
-            >
-                <?php
-                foreach ($headerBanners as $headerBanner) {
-                    if ($headerBanner->image) {
-                        ?>
-                        <div class="item-inner">
-                            <div class="image">
-                                <span>
-                                    <?= $headerBanner->image->img() ?>
-                                </span>
+        if (count($headerBanners) > 0) {
+            ?>
+            <div class="container clr aspect-ratio __16x9" id="top-banner">
+                <div class="slider ratio-fixed"
+                     data-slide-time="200"
+                     data-display-arrows="true"
+                     data-display-arrows-small="false"
+                     data-display-navigator="true"
+                     data-item-aspect-ratio="1.777777777777778"
+                     data-autorun-delay="5000"
+                >
+                    <?php
+                    foreach ($headerBanners as $headerBanner) {
+                        if ($headerBanner->image) {
+                            ?>
+                            <div class="item-inner">
+                                <a class="image" href="<?= $headerBanner->link ?>" title="<?= $headerBanner->title ?>">
+                                    <span>
+                                        <?= $headerBanner->image->img() ?>
+                                    </span>
+                                </a>
                             </div>
-                        </div>
-                        <?php
+                            <?php
+                        }
                     }
-                }
-                ?>
+                    ?>
+                </div>
             </div>
-        </div>
-        <?php
+            <?php
+        }
     }
     ?>
 
