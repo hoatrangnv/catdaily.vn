@@ -88,13 +88,13 @@ $this->title = $seoInfo->page_title ? $seoInfo->page_title : Yii::$app->name;
 
         if (count($headerBanners) > 0) {
             ?>
-            <div class="container clr aspect-ratio __16x9" id="top-banner">
+            <div class="container clr aspect-ratio __5x2" id="top-banner">
                 <div class="slider ratio-fixed"
                      data-slide-time="200"
                      data-display-arrows="true"
                      data-display-arrows-small="false"
                      data-display-navigator="true"
-                     data-item-aspect-ratio="1.777777777777778"
+                     data-item-aspect-ratio="2.5"
                      data-autorun-delay="5000"
                 >
                     <?php
@@ -102,10 +102,13 @@ $this->title = $seoInfo->page_title ? $seoInfo->page_title : Yii::$app->name;
                         if ($headerBanner->image) {
                             ?>
                             <div class="item-inner">
-                                <a class="image" href="<?= $headerBanner->link ?>" title="<?= $headerBanner->title ?>">
+                                <div class="image">
                                     <span>
                                         <?= $headerBanner->image->img() ?>
                                     </span>
+                                </div>
+                                <a class="title" href="<?= $headerBanner->link ?>" title="<?= $headerBanner->title ?>">
+                                    <?= nl2br($headerBanner->title) ?>
                                 </a>
                             </div>
                             <?php

@@ -121,6 +121,34 @@ i.icon {
 .frame.aspect-ratio.__3x2 {
     padding-bottom: calc(200% / 3);
 }
+.aspect-ratio.__3x1 .image > span,
+.aspect-ratio.__3x1 .video > div,
+.aspect-ratio.__3x1 .frame,
+.image.aspect-ratio.__3x1 > span,
+.video.aspect-ratio.__3x1 > div,
+.frame.aspect-ratio.__3x1 {
+    padding-bottom: calc(100% / 3);
+}
+
+@media screen and (max-width: 640px) {
+    .aspect-ratio.__16x9-sm .image > span,
+    .aspect-ratio.__16x9-sm .video > div,
+    .aspect-ratio.__16x9-sm .frame,
+    .image.aspect-ratio.__16x9-sm > span,
+    .video.aspect-ratio.__16x9-sm > div,
+    .frame.aspect-ratio.__16x9-sm {
+        padding-bottom: calc(900% / 16);
+    }
+    .aspect-ratio.__3x2-sm .image > span,
+    .aspect-ratio.__3x2-sm .video > div,
+    .aspect-ratio.__3x2-sm .frame,
+    .image.aspect-ratio.__3x2-sm > span,
+    .video.aspect-ratio.__3x2-sm > div,
+    .frame.aspect-ratio.__3x2-sm {
+        padding-bottom: calc(200% / 3);
+    }
+}
+
 
 
 /** PARAGRAPH */

@@ -175,7 +175,8 @@ i.icon {
         display: none;
         position: absolute;
         z-index: 10;
-        background-color: #fff;
+        background-color: #ED008E;
+        background: linear-gradient(to bottom, #ED008E, #9C2B93);
         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
         padding: 1rem 0;
         min-width: 100%;
@@ -183,9 +184,10 @@ i.icon {
     #top-nav .sub-menu li a {
         padding: 0.5rem 1.5rem;
         display: block;
+        color: rgba(255, 255, 255, 0.9);
     }
     #top-nav .sub-menu li:hover {
-        background-color: #eee;
+        background-color: rgba(0, 0, 0, 0.1);
     }
     #top-nav .sub-menu > li.active > a {
         color: #ED008E;
@@ -212,11 +214,43 @@ i.icon {
 #top-banner {
     margin-top: 1rem;
 }
-#top-banner .slider-nav {
+#top-banner .title {
     position: absolute;
-    bottom: 0;
-    left: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 1rem 1.2rem;
     right: 0;
+    bottom: 0;
+    margin: auto;
+    display: table;
+    font-size: 1.2em;
+    font-weight: bold;
+    z-index: 10;
+}
+
+#top-banner a:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+@media screen and (min-width: 641px) {
+    #top-banner .slider-nav {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    #top-banner .title {
+        padding: 0.5rem;
+        font-size: 1em;
+    }
+    #top-banner .slider-nav {
+        background-color: #fafafa;
+    }
+    #top-banner .slider-nav li:not(.active) span {
+        background-color: #ccc;
+    }
 }
 
 @media screen and (max-width: 640px) {
@@ -1009,7 +1043,42 @@ footer a:hover {
 .frame.aspect-ratio.__3x2 {
     padding-bottom: calc(200% / 3);
 }
+.aspect-ratio.__3x1 .image > span,
+.aspect-ratio.__3x1 .video > div,
+.aspect-ratio.__3x1 .frame,
+.image.aspect-ratio.__3x1 > span,
+.video.aspect-ratio.__3x1 > div,
+.frame.aspect-ratio.__3x1 {
+    padding-bottom: calc(100% / 3);
+}
+.aspect-ratio.__5x2 .image > span,
+.aspect-ratio.__5x2 .video > div,
+.aspect-ratio.__5x2 .frame,
+.image.aspect-ratio.__5x2 > span,
+.video.aspect-ratio.__5x2 > div,
+.frame.aspect-ratio.__5x2 {
+    padding-bottom: calc(200% / 5);
+}
 
+
+@media screen and (max-width: 640px) {
+    .aspect-ratio.__16x9-sm .image > span,
+    .aspect-ratio.__16x9-sm .video > div,
+    .aspect-ratio.__16x9-sm .frame,
+    .image.aspect-ratio.__16x9-sm > span,
+    .video.aspect-ratio.__16x9-sm > div,
+    .frame.aspect-ratio.__16x9-sm {
+        padding-bottom: calc(900% / 16);
+    }
+    .aspect-ratio.__3x2-sm .image > span,
+    .aspect-ratio.__3x2-sm .video > div,
+    .aspect-ratio.__3x2-sm .frame,
+    .image.aspect-ratio.__3x2-sm > span,
+    .video.aspect-ratio.__3x2-sm > div,
+    .frame.aspect-ratio.__3x2-sm {
+        padding-bottom: calc(200% / 3);
+    }
+}
 
 /** PARAGRAPH */
 .paragraph * {
@@ -1123,7 +1192,6 @@ footer a:hover {
 }
 .slider-nav {
     text-align: center;
-    margin-top: 0.25rem;
 }
 .slider-nav li {
     cursor: pointer;
@@ -1151,6 +1219,12 @@ footer a:hover {
 }
 .slider-nav li.active span {
     background-color: #ED008E;
+}
+@media screen and (max-width: 640px) {
+    .slider-nav li span:empty {
+        width: 8px;
+        height: 8px;
+    }
 }
 
 /** VIDEO */

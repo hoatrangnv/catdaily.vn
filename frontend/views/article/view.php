@@ -50,8 +50,8 @@ $this->params['breadcrumbs'][] = $model->name;
                     </div>
                 </div>
                 <?php
-                break;
                 */
+                break;
             case ArticleCategory::TYPE_VIDEO:
                 ?>
                 <div class="video-container">
