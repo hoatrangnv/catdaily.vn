@@ -166,6 +166,9 @@ i.icon {
         display: inline-block;
         margin: 0 0.25rem;
     }
+    #top-nav .menu > li a {
+        font-size: 0.9em;
+    }
     #top-nav .menu > li > a:hover {
         text-decoration: underline;
     }
