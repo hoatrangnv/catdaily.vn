@@ -11,14 +11,14 @@ use yii\helpers\Html;
 
 ?>
 <div class="left">
+    <?php
+    $top_count = count($top_articles);
+    if ($top_count > 0) {
+    ?>
     <div class="top-stories aspect-ratio __3x2 clr">
-        <?php
-        $top_count = count($top_articles);
-        ?>
         <div class="clr">
             <div class="hot">
                 <?php
-                if ($top_count > 0) {
                     echo $top_articles[0]->viewAnchor(
                         '<div class="image"><span>'
                         . $top_articles[0]->avatarImg()
@@ -32,7 +32,6 @@ use yii\helpers\Html;
                         . '<p>' . str_replace("\n", '</p><p>', Html::encode($top_articles[0]->description)) . '</p>'
                         . '</div>'
                     );
-                }
                 ?>
             </div>
             <div class="warm">
@@ -92,6 +91,8 @@ use yii\helpers\Html;
         ?>
     </div>
     <?php
+    }
+
     foreach ($article_categories as $category) {
         /**
          * @var $articles \frontend\models\Article[]
