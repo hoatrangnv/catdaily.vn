@@ -64,7 +64,7 @@ $articles = array_merge($articles_1, $articles_2, $articles_3, $articles_4);
         <?php
         foreach ($articles as $item) {
             ?>
-            <li>
+            <li class="clr">
                 <?= $item->viewAnchor(
                     '<div class="image"><span>'
                     . $item->avatarImg()

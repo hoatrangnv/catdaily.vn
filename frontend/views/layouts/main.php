@@ -52,9 +52,7 @@ $this->title = $seoInfo->page_title ? $seoInfo->page_title : Yii::$app->name;
         margin-left: 1.5rem;
     }
     @media screen and (max-width: 640px) {
-        #header {
-            padding-left: calc(35px + 1.5rem);
-        }
+
     }
 </style>
     <div id="menu-mobile-backdrop"
@@ -63,9 +61,9 @@ $this->title = $seoInfo->page_title ? $seoInfo->page_title : Yii::$app->name;
 
     <div id="header">
         <div class="container">
-            <a>CATDaily</a>
-            <br class="sm-only">
-            <span>Culture - Art - Technology</span>
+            <a class="logo" href="<?= Url::home() ?>" title="<?= Yii::$app->name ?>">
+                <img src="<?= Yii::getAlias('@web/img/logo.png') ?>" alt="logo">
+            </a>
         </div>
     </div>
 

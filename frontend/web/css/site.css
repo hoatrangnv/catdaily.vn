@@ -122,15 +122,13 @@ i.icon {
 #header {
     background-color: #fff;
 }
-#header .logo,
+#header .logo {
+    display: block;
+    margin: auto;
+}
 #header .logo img {
     display: block;
     width: 100%;
-}
-#header .logo span {
-    font-size: 1.6em;
-    color: #36a;
-    font-weight: bold;
 }
 #header .banner,
 #header .banner img {
@@ -146,7 +144,7 @@ i.icon {
 }
 #top-nav .menu > li {
     display: block;
-    float: left;
+    /*float: left;*/
 }
 #top-nav .menu > li > a {
     display: block;
@@ -158,9 +156,15 @@ i.icon {
 @media screen and (min-width: 641px) {
     #top-nav {
         margin-top: 1rem;
-        font-weight: bold;
         background-color: #ED008E;
         background: linear-gradient(to right, #ED008E, #9C2B93);
+    }
+    #top-nav .menu {
+        text-align: center;
+    }
+    #top-nav .menu > li {
+        display: inline-block;
+        margin: 0 0.5rem;
     }
     #top-nav .menu > li > a:hover {
         text-decoration: underline;
@@ -240,12 +244,21 @@ i.icon {
 }
 
 @media screen and (max-width: 640px) {
+    #header {
+        padding-left: calc(35px + 1rem);
+        padding-right: calc(35px + 1rem);
+    }
+
+    #top-banner {
+        padding-left: 0;
+        padding-right: 0;
+    }
     #top-banner .title {
         padding: 0.5rem;
         font-size: 1em;
     }
     #top-banner .slider-nav {
-        background-color: #fafafa;
+        /*background-color: #fafafa;*/
     }
     #top-banner .slider-nav li:not(.active) span {
         background-color: #ccc;
@@ -301,8 +314,8 @@ i.icon {
         width: 70px;
     }
     #top-nav .menu-toggle {
-        width: calc(35px + 1.5rem);
-        height: calc(35px + 1.5rem);
+        width: calc(35px + 1rem);
+        height: calc(35px + 1rem);
         color: #fff;
         display: table;
         cursor: pointer;
@@ -834,27 +847,24 @@ i.icon {
 }
 
 /** .aside-featured-stories */
+.aside-featured-stories ul li {
+    list-style: none;
+}
+.aside-featured-stories ul li:not(:first-child) {
+    margin-top: 1rem;
+}
+.aside-featured-stories ul li a .image {
+    width: calc(30% - 0.25 * 0.6rem);
+    float: left;
+}
 .aside-featured-stories ul li a .name {
     font-size: 1em;
-    margin-top: 0.5rem;
     font-weight: normal;
+    width: calc(70% - 0.75 * 0.6rem);
+    float: right;
 }
 .aside-featured-stories ul li a:hover .name {
     color: #ED008E;
-}
-.aside-featured-stories ul li {
-    list-style: none;
-    width: calc(100% / 2 - 0.75rem / 2);
-    float: left;
-}
-.aside-featured-stories ul li:not(:nth-child(2n + 1)) {
-    margin-left: 0.75rem;
-}
-.aside-featured-stories ul li:nth-child(n + 3) {
-    margin-top: 0.75rem;
-}
-.aside-featured-stories ul li:nth-child(2n + 1) {
-    clear: left;
 }
 
 .aside-story-list:not(:first-child) {
@@ -869,7 +879,7 @@ i.icon {
     font-weight: bold;
     display: block;
     padding: 0.25rem 0.5rem;
-    margin-bottom: 0.75rem;
+    margin-bottom: 1rem;
 }
 .aside-story-list ul li {
     list-style: none;
@@ -1308,14 +1318,7 @@ footer a:hover {
         margin-top: 0.5rem;
     }
     #header .logo {
-        min-height: 3rem;
-    }
-    #header .logo span {
-        line-height: 3rem;
-        font-size: 1.5em;
-    }
-    #header .banner {
-        margin-top: 0.5rem;
+        width: 120px;
     }
 
     /** NAV BAR */
@@ -1517,10 +1520,7 @@ footer a:hover {
         padding: 0.5rem 0;
     }
     #header .logo {
-        max-width: 250px;
-    }
-    #header .banner {
-        max-width: calc(100% - 250px - 2rem);
+        max-width: 200px;
     }
 
     /** NAV BAR */
