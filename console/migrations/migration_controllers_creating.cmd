@@ -23,3 +23,5 @@ php yii migrate/create create_junction_table_for_article_and_article_tag_tables
 yii migrate/create add_display_areas_column_to_article_category_table --fields="display_areas:string"
 
 php yii migrate/create create_junction_table_for_article_and_article_tables
+
+php yii migrate/create create_partner_table --fields="name:string:notNull:unique,logo_image_id:integer:notNull:foreignKey(image),website:string,sort_order:integer:notNull"

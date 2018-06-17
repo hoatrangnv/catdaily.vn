@@ -6,6 +6,7 @@ use yii\helpers\Html;
  * @var $this yii\web\View
  * @var $top_articles \frontend\models\Article[]
  * @var $article_categories ArticleCategory[]
+ * @var $partners \common\models\Partner[]
  */
 
 ?>
@@ -199,6 +200,7 @@ use yii\helpers\Html;
                         <div class="extra sm-hidden">
                             <ul>
                                 <?php
+                                /*
                                 $i = 0;
                                 foreach ($category->findChildren() as $child) {
                                     $i++;
@@ -215,6 +217,7 @@ use yii\helpers\Html;
                                     </li>
                                     <?php
                                 }
+                                */
                                 ?>
                             </ul>
                         </div>
@@ -251,6 +254,41 @@ use yii\helpers\Html;
         }
     }
     ?>
+
+    <div id="home-partners" class="stories-card">
+        <div class="heading clr">
+            <div class="title">
+                <span>Đối tác</span>
+            </div>
+        </div>
+        <div class="body clr">
+            <div class="slider"
+                 data-page-size="3"
+                 data-page-size-small="1"
+                 data-slide-time="250"
+                 data-display-navigator="true"
+                 data-display-arrows="true"
+                 data-display-arrows-small="false"
+                 data-preview-right="0.2"
+                 data-preview-left="0.2"
+            >
+                <?php
+                foreach ($partners as $partner) {
+                    ?>
+                    <a class="partner-item" href="<?= $partner->website ?>" title="<?= $partner->name ?>">
+                        <div class="avatar frame aspect-ratio __3x2">
+                            <?= $partner->logoImage ? $partner->logoImage->img() : '' ?>
+                        </div>
+                        <div class="name">
+                            <?= $partner->name ?>
+                        </div>
+                    </a>
+                    <?php
+                }
+                ?>
+            </div>
+        </div>
+    </div>
 </div>
 <div class="right">
     <?= $this->render('//article/_asideFeaturedList') ?>

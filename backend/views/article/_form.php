@@ -2,6 +2,7 @@
 
 use backend\models\Article;
 use backend\models\Tag;
+use common\models\Image;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\helpers\Url;
@@ -25,7 +26,7 @@ use backend\models\Game;
             <?= $form->field($model, 'slug')->textInput(['maxlength' => true]) ?>
 
             <?= $form->field($model, 'avatar_image_id')
-                ->dropDownList(($image = $model->avatarImage) ? [$image->id => $image->name] : []) ?>
+                ->dropDownList(($image = Image::findOne($model->avatar_image_id)) ? [$image->id => $image->name] : []) ?>
 
             <?= $form->field($model, 'article_category_id')
                 ->dropDownList(ArticleCategory::dropDownListData(), ['prompt' => '']) ?>

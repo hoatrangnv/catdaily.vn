@@ -1,6 +1,7 @@
 <?php
 namespace frontend\controllers;
 
+use common\models\Partner;
 use frontend\models\Article;
 use frontend\models\ArticleCategory;
 use frontend\models\Game;
@@ -90,7 +91,9 @@ class SiteController extends BaseController
             return strpos($item->displaying_areas, json_encode(ArticleCategory::DISPLAYING_AREA__HOME_BODY)) !== false;
         });
 
-        return $this->render('index', compact('top_articles', 'article_categories'));
+        $partners = Partner::find()->orderBy('sort_order asc')->all();
+
+        return $this->render('index', compact('top_articles', 'article_categories', 'partners'));
     }
 
     /**
