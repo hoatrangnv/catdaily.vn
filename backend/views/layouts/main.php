@@ -70,7 +70,7 @@ AppAsset::register($this);
                     ['label' => 'List', 'url' => ['/partner/index']],
                     ['label' => 'Create New', 'url' => ['/partner/create']],
                 ]],
-                ['label' => 'Static Page Info', 'items' => [
+                ['label' => 'Page Info', 'items' => [
                     ['label' => 'List', 'url' => ['/static-page-info/index']],
                     ['label' => 'Create New', 'url' => ['/static-page-info/create']],
                 ]],
