@@ -164,7 +164,7 @@ i.icon {
     }
     #top-nav .menu > li {
         display: inline-block;
-        margin: 0 0.5rem;
+        margin: 0 0.25rem;
     }
     #top-nav .menu > li > a:hover {
         text-decoration: underline;
