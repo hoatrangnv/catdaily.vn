@@ -1,71 +1,55 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Quyet
- * Date: 1/8/2018
- * Time: 9:20 AM
+ * User: User
+ * Date: 6/19/2018
+ * Time: 12:51 PM
  */
-use common\models\SiteParam;
-use yii\helpers\Html;
-use yii\helpers\Url;
 
 ?>
 <footer>
     <div class="container">
-        <ul>
-            <?php
-            foreach (SiteParam::findAllByNames([
-                SiteParam::COMPANY_NAME,
-                SiteParam::ADDRESS,
-                SiteParam::PHONE_NUMBER,
-                SiteParam::HOTLINE,
-                SiteParam::EMAIL,
-            ]) as $item) {
-                $value = Html::encode($item->value);
-                switch ($item->name) {
-                    case SiteParam::COMPANY_NAME:
-                        ?>
-                        <li class="com-name">
-                            <span><?= $value ?></span>
-                        </li>
-                        <?php
-                        break;
-                    case SiteParam::ADDRESS:
-                        ?>
-                        <li class="address">
-                            <span>Địa chỉ:</span>
-                            <span><?= $value ?></span>
-                        </li>
-                        <?php
-                        break;
-                    case SiteParam::PHONE_NUMBER:
-                        ?>
-                        <li class="phone-number">
-                            <span>Điện thoại:</span>
-                            <a href="tel:<?= $value ?>" title="Bấm để gọi"><?= $value ?></a>
-                        </li>
-                        <?php
-                        break;
-                    case SiteParam::HOTLINE:
-                        ?>
-                        <li class="hotline">
-                            <span>Hotline:</span>
-                            <a href="tel:<?= $value ?>" title="Bấm để gọi"><?= $value ?></a>
-                        </li>
-                        <?php
-                        break;
-                    case SiteParam::EMAIL:
-                        ?>
-                        <li class="email">
-                            <span>Email:</span>
-                            <a href="mailto:<?= $value ?>" title="Gửi email"><?= $value ?></a>
-                        </li>
-                        <?php
-                        break;
-
-                }
-            }
-            ?>
-        </ul>
+        <div class="ft-row">
+            <div class="ft-col">
+                <h3 class="title" style="height: 0">&nbsp;</h3>
+                <a class="logo">
+                    <img src="<?= Yii::getAlias('@web/img/logo_v2.png') ?>" alt="logo">
+                </a>
+            </div>
+            <div class="ft-col">
+                <h3 class="title">Tổng biên tập</h3>
+                <div class="info">NB. Đỗ Xuân Cường</div>
+                <h3 class="title">Quản lý nội dung</h3>
+                <div class="info">Ms. Đỗ Thùy Trang</div>
+                <h3 class="title">Quản lý truyền thông</h3>
+                <div class="info">Ms. Hàn Vi</div>
+            </div>
+            <div class="ft-col">
+                <h3 class="title">Cơ quan chủ quản</h3>
+                <div class="info">Công ty cổ phần Bất động sản Bảo Hưng</div>
+                <h3 class="title">Trụ sở</h3>
+                <div class="info">91 phố Trần Quốc Vượng, P. Dịch Vọng Hậu, Q. Cầu Giấy, Hà Nội</div>
+                <h3 class="title">Liên hệ quảng cáo</h3>
+                <div class="info">
+                    Hotline: <a>0987444333</a> &minus; Email: <a>qc@catdaily.vn</a>
+                </div>
+            </div>
+            <div class="ft-col">
+                <h3 class="title">Về chúng tôi</h3>
+                <div class="info">
+                    <a>Giới thiệu</a>
+                </div>
+                <div class="info">
+                    <a>Facebook</a>
+                </div>
+                <div class="info">
+                    <a>Youtube</a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; Copyright 2018 Catdaily.vn
+            <br>Mọi hình thức sao chép phải có sự đồng ý bằng văn bản.
+        </div>
     </div>
 </footer>

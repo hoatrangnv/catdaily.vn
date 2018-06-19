@@ -1026,7 +1026,7 @@ footer {
     padding: 2rem;
     margin-top: 2rem;
     border-top: 1px solid #ddd;
-    background-color: #eee;
+    background-color: #fafafa;
 }
 footer ul {
     list-style: none;
@@ -1043,6 +1043,39 @@ footer a:hover {
     text-decoration: underline;
     color: #ED008E;
 }
+footer .ft-row {
+    display: table-row;
+    width: 100%;
+}
+footer .ft-col {
+    padding: 1rem 1.5rem;
+    display: table-cell;
+}
+footer .logo {
+    max-width: 200px;
+    display: block;
+}
+footer .logo img {
+    display: block;
+    width: 100%;
+}
+footer .title {
+    white-space: nowrap;
+    font-size: 1.1em;
+}
+footer .title:not(:first-child) {
+    margin-top: 0.5rem;
+}
+footer .info {
+    margin-top: 0.5rem;
+    color: #666;
+}
+footer .copyright {
+    margin-top: 1rem;
+    text-align: center;
+    color: #888;
+}
+
 
 /** IMAGE */
 .image > span > img {
