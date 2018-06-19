@@ -62,7 +62,7 @@ $this->title = $seoInfo->page_title ? $seoInfo->page_title : Yii::$app->name;
     <div id="header">
         <div class="container">
             <a class="logo" href="<?= Url::home() ?>" title="<?= Yii::$app->name ?>">
-                <img src="<?= Yii::getAlias('@web/img/logo.png') ?>" alt="logo">
+                <img src="<?= Yii::getAlias('@web/img/logo_v2.png') ?>" alt="logo">
             </a>
         </div>
     </div>
