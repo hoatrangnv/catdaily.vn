@@ -238,6 +238,10 @@ i.icon {
 }
 
 @media screen and (min-width: 641px) {
+    #top-banner .title {
+        bottom: 5%;
+        max-width: 40%;
+    }
     #top-banner .slider-nav {
         position: absolute;
         bottom: 0;

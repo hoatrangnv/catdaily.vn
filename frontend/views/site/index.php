@@ -268,7 +268,7 @@ use yii\helpers\Html;
             <div class="body clr">
                 <div class="slider"
                      data-page-size="3"
-                     data-page-size-small="1"
+                     data-page-size-small="2"
                      data-slide-time="250"
                      data-display-navigator="true"
                      data-display-arrows="true"
