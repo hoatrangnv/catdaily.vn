@@ -993,6 +993,9 @@ section .body {
     display: block;
     padding: 0 1rem;
     overflow: hidden;
+    width: 100%;
+    max-width: 120px;
+    margin: auto;
 }
 #home-partners li .avatar img {
     display: block;
