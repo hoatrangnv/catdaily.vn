@@ -281,7 +281,7 @@ use yii\helpers\Html;
                     foreach ($partners as $partner) {
                         ?>
                         <a class="partner-item" href="<?= $partner->website ?>" title="<?= $partner->name ?>">
-                            <div class="avatar frame aspect-ratio __1x1">
+                            <div class="avatar frame aspect-ratio __3x2">
                                 <?= $partner->logoImage ? $partner->logoImage->img() : '' ?>
                             </div>
                             <div class="name">
