@@ -43,11 +43,12 @@ use common\models\SiteParam;
                     <?php
                 }
                 ?>
-                <h3 class="title">Liên hệ quảng cáo</h3>
                 <?php
                 $phone = SiteParam::findOneByName(SiteParam::PHONE);
                 $email = SiteParam::findOneByName(SiteParam::EMAIL);
+                if ($phone || $email) {
                 ?>
+                <h3 class="title">Liên hệ quảng cáo</h3>
                 <div class="info">
                     <?php
                     if ($phone) {
@@ -65,6 +66,9 @@ use common\models\SiteParam;
                     }
                     ?>
                 </div>
+                <?php
+                }
+                ?>
             </div>
             <div class="ft-col">
                 <h3 class="title">Về chúng tôi</h3>
