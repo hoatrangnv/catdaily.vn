@@ -284,6 +284,9 @@ use yii\helpers\Html;
                             <div class="avatar frame aspect-ratio __1x1">
                                 <?= $partner->logoImage ? $partner->logoImage->img() : '' ?>
                             </div>
+                            <div class="name">
+                                <?= $partner->name ?>
+                            </div>
                         </a>
                         <?php
                     }
