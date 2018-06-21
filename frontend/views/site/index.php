@@ -268,7 +268,6 @@ use yii\helpers\Html;
             <div class="body clr">
                 <div class="slider"
                      data-page-size="4"
-                     data-page-size-medium="3"
                      data-page-size-small="2"
                      data-slide-time="250"
                      data-display-navigator="true"
@@ -284,9 +283,9 @@ use yii\helpers\Html;
                             <div class="avatar frame aspect-ratio __3x2">
                                 <?= $partner->logoImage ? $partner->logoImage->img() : '' ?>
                             </div>
-                            <div class="name">
+                            <!--<div class="name">
                                 <?= $partner->name ?>
-                            </div>
+                            </div>-->
                         </a>
                         <?php
                     }
