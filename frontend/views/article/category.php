@@ -13,9 +13,9 @@ use yii\helpers\Html;
 <div class="left">
     <section class="story-category">
         <div class="heading clr">
-            <h2 class="title">
+            <h1 class="title">
                 <span><?= Html::encode($category->name) ?></span>
-            </h2>
+            </h1>
         </div>
         <div class="body clr">
             <div class="shares">
