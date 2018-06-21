@@ -991,7 +991,7 @@ section .body {
 /** HOME PARTNERS */
 #home-partners li a {
     display: block;
-    padding: 0 1rem;
+    padding: 0 2rem;
     overflow: hidden;
 }
 #home-partners li .avatar img {
