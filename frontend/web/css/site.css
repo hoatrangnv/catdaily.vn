@@ -991,13 +991,13 @@ section .body {
 /** HOME PARTNERS */
 #home-partners li a {
     display: block;
-    padding-right: 2rem;
+    padding: 0 1rem;
     overflow: hidden;
 }
 #home-partners li .avatar {
     width: 100%;
     max-width: 130px;
-    /*margin: auto;*/
+    margin: auto;
 }
 #home-partners li .avatar img {
     display: block;
@@ -1010,8 +1010,8 @@ section .body {
     bottom: 0;
     left: 0;
     right: 0;
+    margin: auto;
     overflow: hidden;
-    /*margin: auto;*/
 }
 #home-partners li .name {
     text-align: center;
