@@ -53,7 +53,7 @@ use common\models\SiteParam;
                     <?php
                     if ($phone) {
                         ?>
-                        Hotline: <a href="tel:<?= $phone->value ?>"><?= $phone->value ?></a>
+                        Hotline: <a href="tel:<?= $phone->value ?>" title="Gọi hotline"><?= $phone->value ?></a>
                         <?php
                         if ($email) {
                             ?> &minus; <?php
@@ -61,7 +61,7 @@ use common\models\SiteParam;
                     }
                     if ($email) {
                         ?>
-                        Email: <a href="mailto:<?= $email->value ?>"><?= $email->value ?></a>
+                        Email: <a href="mailto:<?= $email->value ?>" title="Gửi email"><?= $email->value ?></a>
                         <?php
                     }
                     ?>
