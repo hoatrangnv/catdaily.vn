@@ -1018,14 +1018,9 @@ section .body {
 #bottom-nav {
     margin-top: 1rem;
 }
-#bottom-nav + footer {
-    margin-top: 0;
-    border-top: none;
-}
 footer {
     padding: 2rem;
     margin-top: 2rem;
-    border-top: 1px solid #ddd;
     background-color: #fafafa;
 }
 footer ul {
