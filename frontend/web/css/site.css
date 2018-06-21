@@ -1050,10 +1050,11 @@ footer .ft-row {
 footer .ft-col {
     padding: 1rem 1.5rem;
     display: table-cell;
+    vertical-align: top;
 }
 footer .logo {
     max-width: 200px;
-    display: block;
+    display: inline-block;
 }
 footer .logo img {
     display: block;
@@ -1500,16 +1501,21 @@ footer .copyright {
         text-align: left;
         margin-top: 1rem;
     }
-    footer .ft-col:not(:first-child),
-    footer .ft-col:not(:last-child) {
+    footer .logo {
+        max-width: 150px;
+    }
+    footer .ft-row,
+    footer .ft-col {
+        display: block;
         width: 100%;
-        float: none;
-        border: none;
-        text-align: left;
+        text-align: center;
         padding: 0;
     }
     footer .ft-col:not(:first-child) {
-        margin-top: 1rem;
+        margin-top: 2rem;
+    }
+    footer .copyright {
+        margin-top: 2rem;
     }
 
     /** POPUP */

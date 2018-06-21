@@ -11,7 +11,6 @@
     <div class="container">
         <div class="ft-row">
             <div class="ft-col">
-                <h3 class="title" style="height: 0">&nbsp;</h3>
                 <a class="logo">
                     <img src="<?= Yii::getAlias('@web/img/logo_v2.png') ?>" alt="logo">
                 </a>
