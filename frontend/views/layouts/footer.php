@@ -25,8 +25,8 @@ use yii\helpers\Url;
                     if (count($title_name) === 2) {
                         list($title, $name) = $title_name;
                         ?>
-                        <h3 class="title"><?= $title ?></h3>
-                        <div class="info"><?= $name ?></div>
+                        <h3 class="title"><?= trim($title) ?></h3>
+                        <div class="info"><?= trim($name) ?></div>
                         <?php
                     }
                 }
