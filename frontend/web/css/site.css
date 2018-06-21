@@ -996,7 +996,7 @@ section .body {
 }
 #home-partners li .avatar {
     width: 100%;
-    max-width: 130px;
+    max-width: 120px;
     margin: auto;
 }
 #home-partners li .avatar img {
