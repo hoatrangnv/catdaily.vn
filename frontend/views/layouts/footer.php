@@ -6,6 +6,7 @@
  * Time: 12:51 PM
  */
 use common\models\SiteParam;
+use yii\helpers\Url;
 
 
 ?>
@@ -13,7 +14,7 @@ use common\models\SiteParam;
     <div class="container">
         <div class="ft-row">
             <div class="ft-col">
-                <a class="logo">
+                <a class="logo" href="<?= Url::home() ?>" title="<?= Yii::$app->name ?>">
                     <img src="<?= Yii::getAlias('@web/img/logo_v2.png') ?>" alt="logo">
                 </a>
             </div>
@@ -98,7 +99,7 @@ use common\models\SiteParam;
             </div>
         </div>
         <div class="copyright">
-            &copy; Copyright 2018 Catdaily.vn
+            &copy; Copyright <?= date('Y') ?> <?= Yii::$app->name ?>
             <br>Mọi hình thức sao chép phải có sự đồng ý bằng văn bản.
         </div>
     </div>
