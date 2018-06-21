@@ -21,11 +21,14 @@ use yii\helpers\Url;
             <div class="ft-col">
                 <?php
                 foreach (SiteParam::findAllByNames([SiteParam::MEMBER]) as $member) {
-                    list($title, $name) = explode(':', $member->value);
-                    ?>
-                    <h3 class="title"><?= $title ?></h3>
-                    <div class="info"><?= $name ?></div>
-                    <?php
+                    $title_name = explode(':', $member->value, 2);
+                    if (count($title_name) === 2) {
+                        list($title, $name) = $title_name;
+                        ?>
+                        <h3 class="title"><?= $title ?></h3>
+                        <div class="info"><?= $name ?></div>
+                        <?php
+                    }
                 }
                 ?>
             </div>
