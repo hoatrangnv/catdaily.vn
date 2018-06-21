@@ -14,15 +14,16 @@ use Yii;
  */
 class SiteParam extends \common\db\MyActiveRecord
 {
-    const COMPANY_NAME = 'company_name';
-    const LOGO_IMAGE_SRC = 'logo_image_src';
-    const ADDRESS = 'address';
-    const PHONE_NUMBER = 'phone_number';
-    const HOTLINE = 'hotline';
+    const COMPANY = 'company';
+    const PARENT_COMPANY = 'parent_company';
+    const HEADQUARTER = 'headquarter';
+    const PHONE = 'phone';
     const EMAIL = 'email';
-    const FACEBOOK_PAGE_URL = 'facebook_page_url';
-    const FOOTER_INFO_HTML = 'footer_info_html';
+    const FACEBOOK_PAGE = 'facebook_page';
+    const YOUTUBE_CHANNEL = 'facebook_channel';
+    const ABOUT_US = 'about_us';
     const TRACKING_CODE = 'tracking_code';
+    const MEMBER = 'member';
 
     /**
      * @return string[]
@@ -30,15 +31,16 @@ class SiteParam extends \common\db\MyActiveRecord
     public function getParamLabels()
     {
         return [
-            self::COMPANY_NAME => 'Company Name',
-            self::LOGO_IMAGE_SRC => 'Logo Image Src',
-            self::ADDRESS => 'Address',
-            self::PHONE_NUMBER => 'Phone Number',
-            self::HOTLINE => 'Hotline',
+            self::COMPANY => 'Company',
+            self::PARENT_COMPANY => 'Parent company',
+            self::HEADQUARTER => 'Headquarter',
+            self::PHONE => 'Phone',
             self::EMAIL => 'Email',
-            self::FACEBOOK_PAGE_URL => 'Facebook page URL',
-            self::FOOTER_INFO_HTML => 'Footer Info HTML',
+            self::FACEBOOK_PAGE => 'Facebook page',
+            self::YOUTUBE_CHANNEL => 'Youtube chanel',
+            self::ABOUT_US => 'About us',
             self::TRACKING_CODE => 'Tracking Code',
+            self::MEMBER => 'Member',
         ];
     }
 
