@@ -7,16 +7,18 @@ use common\models\UrlParam;
 use yii\helpers\Url;
 ?>
 <script>
-    !function (containers) {
-        [].forEach.call(containers, function (container) {
-            var scrollFixedId = container.getAttribute('data-scroll-fixed-container');
-            var scrollFixedElms = container.querySelectorAll('[data-scroll-fixed-in="' + scrollFixedId + '"]:not([data-scroll-fixed]):not([data-scroll-fixed-copy])');
-            var startY = container.getAttribute('data-scroll-fixed-start');
-            [].forEach.call(scrollFixedElms, function (el) {
-                initScrollFixed(el, container, startY);
+    if (window.innerWidth > 640) {
+        !function (containers) {
+            [].forEach.call(containers, function (container) {
+                var scrollFixedId = container.getAttribute('data-scroll-fixed-container');
+                var scrollFixedElms = container.querySelectorAll('[data-scroll-fixed-in="' + scrollFixedId + '"]:not([data-scroll-fixed]):not([data-scroll-fixed-copy])');
+                var startY = container.getAttribute('data-scroll-fixed-start');
+                [].forEach.call(scrollFixedElms, function (el) {
+                    initScrollFixed(el, container, startY);
+                });
             });
-        });
-    }(document.querySelectorAll('[data-scroll-fixed-container]'));
+        }(document.querySelectorAll('[data-scroll-fixed-container]'));
+    }
 
     /**
      *
@@ -227,9 +229,9 @@ use yii\helpers\Url;
         );
 
         document.addEventListener("click", function (event) {
-            if (isContains(container, event.target)
+            if (container.contains(event.target)
                 && msg !== event.target
-                && !isContains(msg, event.target)
+                && !msg.contains(event.target)
                 && container.parentNode
             ) {
                 container.parentNode.removeChild(container);
@@ -313,15 +315,5 @@ use yii\helpers\Url;
             }
         }
         return result_array.join(";");
-    }
-
-    function isContains(root, elem) {
-        if (root.contains(elem)) {
-            return true;
-        } else {
-            return [].some.call(root.children, function (child) {
-                return isContains(child, elem);
-            });
-        }
     }
 </script>
