@@ -39,22 +39,6 @@ $this->title = $seoInfo->page_title ? $seoInfo->page_title : Yii::$app->name;
 </head>
 <body data-scroll-fixed-container="global" data-scroll-fixed-start="0">
 <?php $this->beginBody() ?>
-<style>
-    #header {
-        color: #A7243A;
-        font-size: 1.5em;
-        font-weight: bold;
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-        font-style: italic;
-    }
-    #header a + * {
-        margin-left: 1.5rem;
-    }
-    @media screen and (max-width: 640px) {
-
-    }
-</style>
     <div id="menu-mobile-backdrop"
          onclick="document.querySelector('html').classList.remove('menu-active')">
     </div>

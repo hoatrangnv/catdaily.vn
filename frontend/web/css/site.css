@@ -121,6 +121,11 @@ i.icon {
 /** HEADER */
 #header {
     background-color: #fff;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+#header a + * {
+    margin-left: 1.5rem;
 }
 #header .logo {
     display: block;
@@ -139,6 +144,9 @@ i.icon {
 /**
  * TOP NAV
  */
+#top-nav {
+    z-index: 100;
+}
 #top-nav ul li {
     list-style: none;
 }
@@ -155,7 +163,6 @@ i.icon {
 
 @media screen and (min-width: 641px) {
     #top-nav {
-        margin-top: 1rem;
         background-color: #ED008E;
         background: linear-gradient(to right, #ED008E, #9C2B93);
     }
