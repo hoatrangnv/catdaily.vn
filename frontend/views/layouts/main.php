@@ -37,7 +37,7 @@ $this->title = $seoInfo->page_title ? $seoInfo->page_title : Yii::$app->name;
     <script src="https://cdn.rawgit.com/vanquyettran/slider/master/slider.js" type="text/javascript"></script>
     <?php $this->head() ?>
 </head>
-<body>
+<body data-scroll-fixed-container="global" data-scroll-fixed-start="0">
 <?php $this->beginBody() ?>
 <style>
     #header {

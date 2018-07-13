@@ -7,6 +7,73 @@ use common\models\UrlParam;
 use yii\helpers\Url;
 ?>
 <script>
+    !function (containers) {
+        [].forEach.call(containers, function (container) {
+            var scrollFixedId = container.getAttribute('data-scroll-fixed-container');
+            var scrollFixedElms = container.querySelectorAll('[data-scroll-fixed-in="' + scrollFixedId + '"]:not([data-scroll-fixed]):not([data-scroll-fixed-copy])');
+            var startY = container.getAttribute('data-scroll-fixed-start');
+            [].forEach.call(scrollFixedElms, function (el) {
+                initScrollFixed(el, container, startY);
+            });
+        });
+    }(document.querySelectorAll('[data-scroll-fixed-container]'));
+
+    /**
+     *
+     * @param {HTMLElement} el
+     * @param {HTMLElement} ctn
+     * @param {string} startY
+     */
+    function initScrollFixed(el, ctn, startY) {
+        var copy = el.cloneNode(true);
+        copy.style.visibility = 'hidden';
+        copy.style.pointerEvents = 'none';
+
+        el.setAttribute('data-scroll-fixed', '');
+        copy.setAttribute('data-scroll-fixed-copy', '');
+
+        window.addEventListener('scroll', function () {
+            var elRect = el.getBoundingClientRect();
+            var copyRect = copy.getBoundingClientRect();
+            var ctnRect = ctn.getBoundingClientRect();
+            var y0;
+
+            if (startY && isNaN(startY)) {
+                var topEl = document.querySelector(startY + ':not([data-scroll-fixed-copy])');
+                if (topEl) {
+                    y0 = topEl.getBoundingClientRect().bottom;
+                } else {
+                    y0 = 0;
+                }
+                console.log('startY', startY, topEl.getBoundingClientRect().bottom);
+            } else {
+                y0 = Number(startY) || 0;
+            }
+
+            if (elRect.top + copyRect.top < y0) {
+                // console.log('scroll case 1');
+                el.parentNode.insertBefore(copy, el);
+                el.style.position = 'fixed';
+                el.style.width = copy.offsetWidth + 'px';
+
+                if (ctnRect.top + ctn.offsetHeight > el.offsetHeight + y0) {
+                    el.style.top = y0 + 'px';
+                } else {
+                    el.style.top = (ctnRect.top + ctn.offsetHeight) - el.offsetHeight + 'px';
+                }
+            } else if (elRect.top + copyRect.top > y0 * 2) { // should not use `>=`, when y0 === 0 it will be lag
+                // console.log('scroll case 2');
+                el.style.top = '0px';
+                el.style.position = 'relative';
+                if (copy.parentNode) {
+                    copy.parentNode.removeChild(copy);
+                }
+            }
+        });
+    }
+</script>
+
+<script>
     // Init sliders
     [].forEach.call(document.querySelectorAll(".slider"), initSlider);
 

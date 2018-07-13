@@ -10,7 +10,7 @@
 use yii\helpers\Url;
 
 ?>
-<div id="top-nav">
+<div id="top-nav" data-scroll-fixed-in="global">
     <div class="container">
         <span class="menu-toggle sm-only"
               onclick="document.querySelector('html').classList.toggle('menu-active')"
