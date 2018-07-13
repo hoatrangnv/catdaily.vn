@@ -165,6 +165,10 @@ i.icon {
     #top-nav {
         background-color: #ED008E;
         background: linear-gradient(to right, #ED008E, #9C2B93);
+        transition: box-shadow 200ms;
+    }
+    #top-nav[data-scroll-fixed="fixed"] {
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
     }
     #top-nav .menu {
         text-align: center;
