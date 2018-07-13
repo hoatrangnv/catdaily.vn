@@ -47,7 +47,6 @@ use yii\helpers\Url;
                 } else {
                     y0 = 0;
                 }
-                console.log('startY', startY, topEl.getBoundingClientRect().bottom);
             } else {
                 y0 = Number(startY) || 0;
             }
@@ -63,13 +62,17 @@ use yii\helpers\Url;
                 } else {
                     el.style.top = (ctnRect.top + ctn.offsetHeight) - el.offsetHeight + 'px';
                 }
+
+                el.setAttribute('data-scroll-fixed', 'fixed');
             } else if (elRect.top + copyRect.top > y0 * 2) { // should not use `>=`, when y0 === 0 it will be lag
                 // console.log('scroll case 2');
-                el.style.top = '0px';
-                el.style.position = 'relative';
+                el.style.top = copy.style.top;
+                el.style.position = copy.style.position;
                 if (copy.parentNode) {
                     copy.parentNode.removeChild(copy);
                 }
+
+                el.setAttribute('data-scroll-fixed', 'released');
             }
         });
     }
