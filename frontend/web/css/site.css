@@ -1361,15 +1361,22 @@ footer .copyright {
 
 
 .story-item {
-    padding-right: 1rem;
     display: block;
 }
+@media screen and (min-width: 641px) {
+    .story-item {
+        padding-right: 1.5rem;
+    }
+}
 .story-item .name {
-    margin-top: 0.5em;
+    margin-top: 0.5rem;
     font-size: 1em;
 }
 .story-item .intro {
-    margin-top: 0.5em;
+    margin-top: 0.5rem;
+}
+.slider.story-slider .slider-nav {
+    margin-top: 0.5rem;
 }
 
 @media screen and (max-width: 860px) {

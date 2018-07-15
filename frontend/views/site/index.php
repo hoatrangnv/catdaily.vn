@@ -293,7 +293,7 @@ use yii\helpers\Html;
                         </div>
                     </div>
                     <div class="body clr">
-                        <div class="slider video-slider"
+                        <div class="slider story-slider"
                              data-page-size="2"
                              data-page-size-small="1"
                              data-slide-time="250"
