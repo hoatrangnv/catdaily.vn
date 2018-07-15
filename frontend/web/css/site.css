@@ -165,7 +165,7 @@ i.icon {
         padding-bottom: 1rem;
     }
     #top-nav {
-        transition: box-shadow 1s, background 1s, background-color 1s;
+        /*transition: box-shadow 1s, background 1s, background-color 1s;*/
     }
     #top-nav[data-scroll-fixed="fixed"] {
         box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
