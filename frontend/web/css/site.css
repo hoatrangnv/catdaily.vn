@@ -1359,6 +1359,15 @@ footer .copyright {
     background-color: #eee;
 }
 
+
+.story-item {
+    padding-right: 1rem;
+    display: block;
+}
+.story-item .name {
+    font-size: 1em;
+}
+
 @media screen and (max-width: 860px) {
     /** HELPERS */
     .lg-only {
