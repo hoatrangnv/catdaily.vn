@@ -308,7 +308,7 @@ use yii\helpers\Html;
                                 echo $article->viewAnchor(
                                     "<div class='image'><span>{$article->avatarImg()}</span></div>"
                                     . "<h3 class='name'>$article->name</h3>"
-                                    . "<div class='intro'>$article->description</h3>",
+                                    . "<div class='intro'>$article->description</div>",
                                     ['class' => 'story-item']
                                 );
                             }
