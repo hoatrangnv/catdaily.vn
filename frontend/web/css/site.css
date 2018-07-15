@@ -172,7 +172,7 @@ i.icon {
         background-color: #ED008E;
         background: linear-gradient(to right, #ED008E, #9C2B93);
     }
-    #top-nav[data-scroll-fixed="released"] .menu {
+    #top-nav:not([data-scroll-fixed="fixed"]) .menu {
         background-color: #ED008E;
         background: linear-gradient(to right, #ED008E, #9C2B93);
     }
