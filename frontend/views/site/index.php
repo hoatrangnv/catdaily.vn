@@ -297,11 +297,8 @@ use yii\helpers\Html;
                              data-page-size="3"
                              data-page-size-small="1"
                              data-slide-time="250"
-                             data-display-navigator="true"
+                             data-display-navigator="false"
                              data-display-arrows="true"
-                             data-display-arrows-small="false"
-                             data-preview-right="0.2"
-                             data-preview-left="0.2"
                         >
                             <?php
                             foreach ($articles as $article) {
