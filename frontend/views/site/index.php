@@ -299,6 +299,7 @@ use yii\helpers\Html;
                              data-slide-time="250"
                              data-display-navigator="false"
                              data-display-arrows="true"
+                             data-item-aspect-ratio="adjust-by-active-items"
                         >
                             <?php
                             foreach ($articles as $article) {

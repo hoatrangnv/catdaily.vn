@@ -1365,7 +1365,11 @@ footer .copyright {
     display: block;
 }
 .story-item .name {
+    margin-top: 0.5em;
     font-size: 1em;
+}
+.story-item .intro {
+    margin-top: 0.5em;
 }
 
 @media screen and (max-width: 860px) {
