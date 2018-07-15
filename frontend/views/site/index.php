@@ -294,11 +294,10 @@ use yii\helpers\Html;
                     </div>
                     <div class="body clr">
                         <div class="slider video-slider"
-                             data-page-size="3"
+                             data-page-size="2"
                              data-page-size-small="1"
                              data-slide-time="250"
-                             data-display-navigator="false"
-                             data-display-arrows="true"
+                             data-display-navigator="true"
                              data-item-aspect-ratio="adjust-by-active-items"
                         >
                             <?php
