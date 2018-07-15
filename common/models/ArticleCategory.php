@@ -50,6 +50,7 @@ class ArticleCategory extends \common\db\MyActiveRecord
 {
     const TYPE_NEWS = 1;
     const TYPE_VIDEO = 2;
+    const TYPE_STORY = 3;
 
     const DISPLAYING_AREA__HOME_BODY = 'home_body';
     const DISPLAYING_AREA__ASIDE = 'aside';
@@ -62,6 +63,7 @@ class ArticleCategory extends \common\db\MyActiveRecord
         return [
             self::TYPE_NEWS => 'News',
             self::TYPE_VIDEO => 'Video',
+            self::TYPE_STORY => 'Story',
         ];
     }
 
