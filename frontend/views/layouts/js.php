@@ -9,7 +9,7 @@ use yii\helpers\Url;
 <script>
     !function (paras) {
         [].forEach.call(paras, function (para) {
-            var iFrames = para.querySelectorAll('iframe[src!="https://www.youtube.com/embed/"]');
+            var iFrames = para.querySelectorAll('iframe[src^="https://www.youtube.com/embed/"]');
             [].forEach.call(iFrames, function (iFrame) {
                 if (!iFrame.getAttribute('width') && !iFrame.getAttribute('height')) {
                     var wrapperInner = element('div', null);
