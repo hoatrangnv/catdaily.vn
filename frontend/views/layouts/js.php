@@ -21,16 +21,18 @@ use yii\helpers\Url;
         });
     }(document.querySelectorAll('.paragraph'));
 
-    !function (containers) {
-        [].forEach.call(containers, function (container) {
-            var scrollFixedId = container.getAttribute('data-scroll-fixed-container');
-            var scrollFixedElms = container.querySelectorAll('[data-scroll-fixed-in="' + scrollFixedId + '"]:not([data-scroll-fixed]):not([data-scroll-fixed-copy])');
-            var startY = container.getAttribute('data-scroll-fixed-start');
-            [].forEach.call(scrollFixedElms, function (el) {
-                initScrollFixed(el, container, startY);
+    if (window.innerWidth > 640) {
+        !function (containers) {
+            [].forEach.call(containers, function (container) {
+                var scrollFixedId = container.getAttribute('data-scroll-fixed-container');
+                var scrollFixedElms = container.querySelectorAll('[data-scroll-fixed-in="' + scrollFixedId + '"]:not([data-scroll-fixed]):not([data-scroll-fixed-copy])');
+                var startY = container.getAttribute('data-scroll-fixed-start');
+                [].forEach.call(scrollFixedElms, function (el) {
+                    initScrollFixed(el, container, startY);
+                });
             });
-        });
-    }(document.querySelectorAll('[data-scroll-fixed-container]'));
+        }(document.querySelectorAll('[data-scroll-fixed-container]'));
+    }
 
     /**
      *
@@ -59,7 +61,6 @@ use yii\helpers\Url;
                 } else {
                     y0 = 0;
                 }
-                console.log('startY', startY, topEl.getBoundingClientRect().bottom);
             } else {
                 y0 = Number(startY) || 0;
             }
@@ -75,13 +76,17 @@ use yii\helpers\Url;
                 } else {
                     el.style.top = (ctnRect.top + ctn.offsetHeight) - el.offsetHeight + 'px';
                 }
+
+                el.setAttribute('data-scroll-fixed', 'fixed');
             } else if (elRect.top + copyRect.top > y0 * 2) { // should not use `>=`, when y0 === 0 it will be lag
                 // console.log('scroll case 2');
-                el.style.top = '0px';
-                el.style.position = 'relative';
+                el.style.top = copy.style.top;
+                el.style.position = copy.style.position;
                 if (copy.parentNode) {
                     copy.parentNode.removeChild(copy);
                 }
+
+                el.setAttribute('data-scroll-fixed', 'released');
             }
         });
     }

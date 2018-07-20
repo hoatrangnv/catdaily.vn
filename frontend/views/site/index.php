@@ -252,6 +252,70 @@ use yii\helpers\Html;
                 <?php
 
                 break;
+
+            case ArticleCategory::TYPE_STORY:
+
+                $limit = 8;
+                $articles = $category->getAllArticles()
+                    ->andWhere(['active' => 1, 'visible' => 1])
+                    ->andWhere(['<', 'published_time', date('Y-m-d H:i:s')])
+                    ->orderBy('published_time desc')
+                    ->limit($limit)
+                    ->all();
+                $article_count = count($articles);
+                ?>
+                <div class="stories-card aspect-ratio __3x2">
+                    <div class="heading clr">
+                        <?= $category->viewAnchor("<span>$category->name</span>", ['class' => 'title']) ?>
+                        <div class="extra sm-hidden">
+                            <ul>
+                                <?php
+                                /*
+                                $i = 0;
+                                foreach ($category->findChildren() as $child) {
+                                    $i++;
+                                    if ($i > 1) {
+                                        ?>
+                                        <li>
+                                            <span>|</span>
+                                        </li>
+                                        <?php
+                                    }
+                                    ?>
+                                    <li>
+                                        <?= $child->viewAnchor() ?>
+                                    </li>
+                                    <?php
+                                }
+                                */
+                                ?>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="body clr">
+                        <div class="slider story-slider"
+                             data-page-size="2"
+                             data-page-size-small="1"
+                             data-slide-time="250"
+                             data-display-navigator="true"
+                             data-item-aspect-ratio="adjust-by-active-items"
+                        >
+                            <?php
+                            foreach ($articles as $article) {
+                                echo $article->viewAnchor(
+                                    "<div class='image'><span>{$article->avatarImg()}</span></div>"
+                                    . "<h3 class='name'>$article->name</h3>"
+                                    . "<div class='intro'>$article->description</div>",
+                                    ['class' => 'story-item']
+                                );
+                            }
+                            ?>
+                        </div>
+                    </div>
+                </div>
+                <?php
+
+                break;
         }
     }
     ?>
