@@ -13,7 +13,7 @@ use yii\helpers\Url;
             [].forEach.call(iFrames, function (iFrame) {
                 if (!iFrame.getAttribute('width') && !iFrame.getAttribute('height')) {
                     var wrapperInner = element('div', null);
-                    var wrapper = element('div', wrapperInner, {class: 'video'});
+                    var wrapper = element('div', wrapperInner, {class: 'video aspect-ratio __16x9'});
                     iFrame.parentNode.insertBefore(wrapper, iFrame);
                     wrapperInner.appendChild(iFrame);
                 }
