@@ -16,7 +16,7 @@ use yii\helpers\Url;
                     var wrapper = element('div', wrapperInner, {class: 'video aspect-ratio __16x9'});
                     iFrame.parentNode.insertBefore(wrapper, iFrame);
                     wrapperInner.appendChild(iFrame);
-                    iFrame.contentDocument.location.reload(true);
+                    iFrame.setAttribute('src', iFrame.src);
                 }
             });
         });
