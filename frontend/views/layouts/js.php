@@ -7,6 +7,20 @@ use common\models\UrlParam;
 use yii\helpers\Url;
 ?>
 <script>
+    !function (paras) {
+        [].forEach.call(paras, function (para) {
+            var iFrames = para.querySelectorAll('iframe[src!="https://www.youtube.com/embed/"]');
+            [].forEach.call(iFrames, function (iFrame) {
+                if (!iFrame.getAttribute('width') && !iFrame.getAttribute('height')) {
+                    var wrapperInner = element('div', null);
+                    var wrapper = element('div', wrapperInner, {class: 'video'});
+                    iFrame.parentNode.insertBefore(wrapper, iFrame);
+                    wrapperInner.appendChild(iFrame);
+                }
+            });
+        });
+    }(document.querySelectorAll('.paragraph'));
+
     !function (containers) {
         [].forEach.call(containers, function (container) {
             var scrollFixedId = container.getAttribute('data-scroll-fixed-container');
@@ -227,9 +241,9 @@ use yii\helpers\Url;
         );
 
         document.addEventListener("click", function (event) {
-            if (isContains(container, event.target)
+            if (container.contains(event.target)
                 && msg !== event.target
-                && !isContains(msg, event.target)
+                && !msg.contains(event.target)
                 && container.parentNode
             ) {
                 container.parentNode.removeChild(container);
@@ -298,12 +312,6 @@ use yii\helpers\Url;
         }
     }
 
-    function empty(element) {
-        while (element.firstChild) {
-            element.removeChild(element.firstChild);
-        }
-    }
-
     function style(obj) {
         var result_array = [];
         var attrName;
@@ -315,13 +323,4 @@ use yii\helpers\Url;
         return result_array.join(";");
     }
 
-    function isContains(root, elem) {
-        if (root.contains(elem)) {
-            return true;
-        } else {
-            return [].some.call(root.children, function (child) {
-                return isContains(child, elem);
-            });
-        }
-    }
 </script>
