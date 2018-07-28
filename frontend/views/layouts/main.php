@@ -34,7 +34,7 @@ $this->title = $seoInfo->page_title ? $seoInfo->page_title : Yii::$app->name;
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() ?>
     <script src="http://hammerjs.github.io/dist/hammer.min.js" type="text/javascript"></script>
-    <script src="https://cdn.rawgit.com/vanquyettran/slider/master/slider.js" type="text/javascript"></script>
+    <script src="https://rawgit.com/vanquyettran/slider/master/slider.js" type="text/javascript"></script>
     <?php $this->head() ?>
 </head>
 <body data-scroll-fixed-container="global" data-scroll-fixed-start="0">
