@@ -7,6 +7,20 @@ use common\models\UrlParam;
 use yii\helpers\Url;
 ?>
 <script>
+    !function (paras) {
+        [].forEach.call(paras, function (para) {
+            var iFrames = para.querySelectorAll('iframe[src^="https://www.youtube.com/embed/"]');
+            [].forEach.call(iFrames, function (iFrame) {
+                if (!iFrame.getAttribute('width') && !iFrame.getAttribute('height')) {
+                    var wrapperInner = element('div', null);
+                    var wrapper = element('div', wrapperInner, {class: 'video aspect-ratio __16x9'});
+                    iFrame.parentNode.insertBefore(wrapper, iFrame);
+                    wrapperInner.appendChild(iFrame);
+                }
+            });
+        });
+    }(document.querySelectorAll('.paragraph'));
+
     if (window.innerWidth > 640) {
         !function (containers) {
             [].forEach.call(containers, function (container) {
@@ -303,12 +317,6 @@ use yii\helpers\Url;
         }
     }
 
-    function empty(element) {
-        while (element.firstChild) {
-            element.removeChild(element.firstChild);
-        }
-    }
-
     function style(obj) {
         var result_array = [];
         var attrName;
@@ -319,4 +327,5 @@ use yii\helpers\Url;
         }
         return result_array.join(";");
     }
+
 </script>
