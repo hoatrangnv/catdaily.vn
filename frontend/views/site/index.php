@@ -363,5 +363,5 @@ use yii\helpers\Html;
 </div>
 <div class="right">
     <?= $this->render('//article/_asideFeaturedList') ?>
-    <?= $this->render('//article/_asideCategoryBasedList') ?>
+    <?php //echo $this->render('//article/_asideCategoryBasedList') ?>
 </div>

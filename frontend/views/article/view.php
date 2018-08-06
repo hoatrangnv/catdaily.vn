@@ -110,8 +110,10 @@ $this->params['breadcrumbs'][] = $model->name;
     ?>
 </div>
 <div class="right">
-    <?= $this->render('//article/_asideFeaturedList') ?>
-    <?= $this->render('//article/_asideCategoryBasedList') ?>
+    <?= $this->render('//article/_asideFeaturedList', [
+        'query' => $model->articleCategory->getArticles()
+    ]) ?>
+    <?php //echo $this->render('//article/_asideCategoryBasedList') ?>
 </div>
 
 <script>

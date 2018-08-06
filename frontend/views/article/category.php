@@ -56,8 +56,10 @@ use yii\helpers\Html;
     </section>
 </div>
 <div class="right">
-    <?= $this->render('//article/_asideFeaturedList') ?>
-    <?= $this->render('//article/_asideCategoryBasedList') ?>
+    <?= $this->render('//article/_asideFeaturedList', [
+        'query' => $category->getAllArticles()
+    ]) ?>
+    <?php //echo $this->render('//article/_asideCategoryBasedList') ?>
 </div>
 
 

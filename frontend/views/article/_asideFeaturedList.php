@@ -9,7 +9,16 @@
 use frontend\models\Article;
 use yii\helpers\Html;
 
-$articles_1 = Article::find()
+
+/**
+ * @var $query \yii\db\ActiveQuery
+ */
+
+if (!$query) {
+    $query = Article::find();
+}
+
+$articles_1 = $query
     ->andWhere(['active' => 1, 'visible' => 1])
     ->andWhere(['<', 'published_time', date('Y-m-d H:i:s')])
     ->andWhere(['>', 'published_time', date('Y-m-d H:i:s', time() - 2 * 86400)])
@@ -20,7 +29,7 @@ $articles_1 = Article::find()
 
 $not_ids = array_keys($articles_1);
 
-$articles_2 = Article::find()
+$articles_2 = $query
     ->andWhere(['active' => 1, 'visible' => 1])
     ->andWhere(['<', 'published_time', date('Y-m-d H:i:s')])
     ->andWhere(['>', 'published_time', date('Y-m-d H:i:s', time() - 7 * 86400)])
@@ -32,7 +41,7 @@ $articles_2 = Article::find()
 
 $not_ids = array_merge($not_ids, array_keys($articles_2));
 
-$articles_3 = Article::find()
+$articles_3 = $query
     ->andWhere(['active' => 1, 'visible' => 1])
     ->andWhere(['<', 'published_time', date('Y-m-d H:i:s')])
     ->andWhere(['not in', 'id', $not_ids])
@@ -43,7 +52,7 @@ $articles_3 = Article::find()
 
 $not_ids = array_merge($not_ids, array_keys($articles_3));
 
-$articles_4 = Article::find()
+$articles_4 = $query
     ->andWhere(['active' => 1, 'visible' => 1])
     ->andWhere(['<', 'published_time', date('Y-m-d H:i:s')])
     ->andWhere(['not in', 'id', $not_ids])
