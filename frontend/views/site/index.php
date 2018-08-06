@@ -361,7 +361,7 @@ use yii\helpers\Html;
     }
     ?>
 </div>
-<div class="right" data-scroll-fixed-in="main">
+<div class="right">
     <?= $this->render('//article/_asideFeaturedList') ?>
     <?php //echo $this->render('//article/_asideCategoryBasedList') ?>
 </div>

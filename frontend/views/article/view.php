@@ -109,7 +109,7 @@ $this->params['breadcrumbs'][] = $model->name;
     }
     ?>
 </div>
-<div class="right" data-scroll-fixed-in="main">
+<div class="right">
     <?= $this->render('//article/_asideFeaturedList', [
         'query' => $model->articleCategory->getArticles()
     ]) ?>

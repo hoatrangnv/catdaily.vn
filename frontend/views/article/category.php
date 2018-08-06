@@ -55,7 +55,7 @@ use yii\helpers\Html;
         </div>
     </section>
 </div>
-<div class="right" data-scroll-fixed-in="main">
+<div class="right">
     <?= $this->render('//article/_asideFeaturedList', [
         'query' => $category->getAllArticles()
     ]) ?>
