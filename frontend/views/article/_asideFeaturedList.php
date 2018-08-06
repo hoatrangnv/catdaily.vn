@@ -14,7 +14,7 @@ use yii\helpers\Html;
  * @var $query \yii\db\ActiveQuery
  */
 
-if (!$query) {
+if (!isset($query)) {
     $query = Article::find();
 }
 
