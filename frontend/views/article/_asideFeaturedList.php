@@ -18,7 +18,7 @@ if (!isset($query)) {
     $query = Article::find();
 }
 
-$articles_1 = $query
+$articles_1 = (clone $query)
     ->andWhere(['active' => 1, 'visible' => 1])
     ->andWhere(['<', 'published_time', date('Y-m-d H:i:s')])
     ->andWhere(['>', 'published_time', date('Y-m-d H:i:s', time() - 2 * 86400)])
@@ -29,7 +29,7 @@ $articles_1 = $query
 
 $not_ids = array_keys($articles_1);
 
-$articles_2 = $query
+$articles_2 = (clone $query)
     ->andWhere(['active' => 1, 'visible' => 1])
     ->andWhere(['<', 'published_time', date('Y-m-d H:i:s')])
     ->andWhere(['>', 'published_time', date('Y-m-d H:i:s', time() - 7 * 86400)])
@@ -41,7 +41,7 @@ $articles_2 = $query
 
 $not_ids = array_merge($not_ids, array_keys($articles_2));
 
-$articles_3 = $query
+$articles_3 = (clone $query)
     ->andWhere(['active' => 1, 'visible' => 1])
     ->andWhere(['<', 'published_time', date('Y-m-d H:i:s')])
     ->andWhere(['not in', 'id', $not_ids])
@@ -52,7 +52,7 @@ $articles_3 = $query
 
 $not_ids = array_merge($not_ids, array_keys($articles_3));
 
-$articles_4 = $query
+$articles_4 = (clone $query)
     ->andWhere(['active' => 1, 'visible' => 1])
     ->andWhere(['<', 'published_time', date('Y-m-d H:i:s')])
     ->andWhere(['not in', 'id', $not_ids])
