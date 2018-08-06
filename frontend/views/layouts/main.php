@@ -104,7 +104,7 @@ $this->title = $seoInfo->page_title ? $seoInfo->page_title : Yii::$app->name;
     }
     ?>
 
-    <div class="container clr" id="main-content">
+    <div class="container clr" id="main-content" data-scroll-fixed-container="main" data-scroll-fixed-start="#top-nav">
         <?= $content ?>
     </div>
 
